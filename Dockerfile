@@ -107,6 +107,7 @@ RUN \
 RUN \
   git clone https://github.com/ps2dev/ps2sdk && \
   pushd ps2sdk && \
+    git checkout -b revert-breaking-changes 474a1388258b8f8b9f0645a34e876831a8342f7d && \
     make -j $(nproc) && \
     make install && \
     ln -sf "${PS2SDK}/ee/startup/crt0.o"  "${PS2DEV}/ee/lib/gcc-lib/ee/3.2.3/crt0.o" && \
